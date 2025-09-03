@@ -1,7 +1,7 @@
 import HeroSection from '@/components/sections/HeroSection';
 import FeaturesSection from '@/components/sections/FeaturesSection';
 import TestimonialsSection from '@/components/sections/TestimonialsSection';
-import CTASection from '@/components/sections/CTASection';
+// import CTASection from '@/components/sections/CTASection';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 
@@ -13,7 +13,7 @@ export default function Home() {
         <HeroSection />
         <FeaturesSection />
         <TestimonialsSection />
-        <CTASection />
+        {/* <CTASection /> */}
       </main>
       <Footer />
     </div>
