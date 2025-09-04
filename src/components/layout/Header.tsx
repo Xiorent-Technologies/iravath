@@ -1,97 +1,120 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
+import { useState } from "react";
+import { Button } from "@/components/layout/Button";
+import { images } from "@/utils/images";
 
-export default function Header() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+const Header = () => {
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-sm">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          {/* Logo */}
-          <div className="flex items-center">
-            <div className="w-10 h-10 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center mr-3">
-              <span className="text-white font-bold text-xl">I</span>
-            </div>
-            <span className="text-2xl font-bold text-gray-900">Iravath</span>
-          </div>
+    <header className="fixed top-0 left-0 w-full z-50 bg-transparent">
+      <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+        {/* Logo (Left Side) */}
+        <div className="flex items-center gap-3">
+          <img
+            width={48}
+            height={48}
+            className="sm:w-[70px] sm:h-[70px] lg:w-[70px] lg:h-[70px]"
+            src={images.logo}
+            alt="Airline Logo"
+          />
+        </div>
 
+        {/* Right Section */}
+        <div className="flex items-center gap-4">
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
-            <a href="/" className="text-gray-700 hover:text-purple-600 font-medium transition-colors">
+          <nav className="hidden md:flex items-center gap-8">
+            <a
+              href="#home"
+              className="text-black hover:text-primary airline-transition font-medium"
+            >
               Home
             </a>
-            <a href="#" className="text-gray-700 hover:text-purple-600 font-medium transition-colors">
-              Projects
+            <a
+              href="#founders"
+              className="text-black hover:text-primary airline-transition font-medium"
+            >
+              Founders’ Initiative
             </a>
-            <a href="/founders-initiative" className="text-gray-700 hover:text-purple-600 font-medium transition-colors">
-              Founders Initiative
-            </a>
-            <a href="#" className="text-gray-700 hover:text-purple-600 font-medium transition-colors">
-              How It Works
-            </a>
-            <a href="#" className="text-gray-700 hover:text-purple-600 font-medium transition-colors">
-              About
+            <a
+              href="#public"
+              className="text-black hover:text-primary airline-transition font-medium"
+            >
+              Public Information
             </a>
           </nav>
 
-          {/* Desktop CTA Buttons */}
-          <div className="hidden md:flex items-center space-x-4">
-            <button className="text-gray-700 hover:text-purple-600 font-medium transition-colors">
-              Sign In
-            </button>
-            <button className="px-6 py-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold rounded-full hover:from-purple-600 hover:to-pink-600 transition-all duration-300 transform hover:scale-105">
-              Get Started
-            </button>
-          </div>
+          {/* Contact Button (Same for Desktop & Mobile) */}
+          <Button
+            variant="gold"
+            className="px-4 py-2 rounded-full text-sm flex items-center"
+          >
+            <span className="mr-1">📞</span> Contact Us
+          </Button>
 
           {/* Mobile Menu Button */}
-          <button
-            className="md:hidden p-2 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          <Button
+            variant="outline"
+            size="icon"
+            className="md:hidden"
+            onClick={() => setMobileOpen(true)}
           >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              {isMenuOpen ? (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              ) : (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              )}
-            </svg>
-          </button>
+            <div className="w-6 h-6 flex flex-col justify-center gap-1">
+              <div className="w-full h-0.5 bg-black"></div>
+              <div className="w-full h-0.5 bg-black"></div>
+              <div className="w-full h-0.5 bg-black"></div>
+            </div>
+          </Button>
         </div>
+      </div>
 
-        {/* Mobile Menu */}
-        {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-gray-200">
-            <nav className="flex flex-col space-y-4">
-              <a href="/" className="text-gray-700 hover:text-purple-600 font-medium transition-colors">
+      {/* Overlay + Side Menu */}
+      {mobileOpen && (
+        <div className="fixed inset-0 z-40">
+          {/* Dark Overlay */}
+          <div
+            className="absolute inset-0 bg-black/40"
+            onClick={() => setMobileOpen(false)}
+          />
+
+          {/* Slide-in Menu */}
+          <div className="absolute top-0 right-0 h-full w-1/2 bg-white shadow-lg border-l border-gray-200 p-6 flex flex-col gap-6 animate-slideIn">
+            <button
+              className="self-end text-black font-bold"
+              onClick={() => setMobileOpen(false)}
+            >
+              ✕
+            </button>
+
+            <nav className="flex flex-col items-start gap-6">
+              <a
+                href="#home"
+                className="text-black hover:text-primary font-medium"
+                onClick={() => setMobileOpen(false)}
+              >
                 Home
               </a>
-              <a href="#" className="text-gray-700 hover:text-purple-600 font-medium transition-colors">
-                Projects
+              <a
+                href="#founders"
+                className="text-black hover:text-primary font-medium"
+                onClick={() => setMobileOpen(false)}
+              >
+                Founders’ Initiative
               </a>
-              <a href="/founders-initiative" className="text-gray-700 hover:text-purple-600 font-medium transition-colors">
-                Founders Initiative
+              <a
+                href="#public"
+                className="text-black hover:text-primary font-medium"
+                onClick={() => setMobileOpen(false)}
+              >
+                Public Information
               </a>
-              <a href="#" className="text-gray-700 hover:text-purple-600 font-medium transition-colors">
-                How It Works
-              </a>
-              <a href="#" className="text-gray-700 hover:text-purple-600 font-medium transition-colors">
-                About
-              </a>
-              <div className="pt-4 border-t border-gray-200 flex flex-col space-y-3">
-                <button className="text-gray-700 hover:text-purple-600 font-medium transition-colors text-left">
-                  Sign In
-                </button>
-                <button className="px-6 py-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold rounded-full hover:from-purple-600 hover:to-pink-600 transition-all duration-300 w-fit">
-                  Get Started
-                </button>
-              </div>
             </nav>
           </div>
-        )}
-      </div>
+        </div>
+      )}
     </header>
   );
-}
+};
+
+export default Header;
