@@ -58,7 +58,7 @@ export default function HeroSection() {
           {/* CTA Buttons */}
           <div className="flex flex-wrap gap-4">
             <button className="px-8 py-3 bg-transparent text-black font-medium rounded-full border-2 border-black  transition-all duration-300">
-              Explore Founders' Initiative
+              Explore Founders&apos; Initiative
             </button>
           </div>
         </div>

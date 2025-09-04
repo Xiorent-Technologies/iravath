@@ -17,13 +17,13 @@ export default function Footer() {
         <div className="bg-white rounded-2xl border-2 border-yellow-400 p-8 md:p-12">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Left Section - Logo and About */}
-            <div className="lg:col-span-1">
+            <div className="lg:col-span-1 text-center lg:text-left">
               {/* Logo */}
-              <div className="flex items-center mb-6">
+              <div className="flex items-center justify-center lg:justify-start mb-6">
                 <img
                   src={images.logo}
                   alt="Iravath Airlines Logo"
-                  className="w-16 h-16 mr-3"
+                  className="w-32 h-32 md:w-20 md:h-20 mr-5"
                 />
               </div>
 
@@ -34,10 +34,10 @@ export default function Footer() {
             </div>
 
             {/* Company Column */}
-            <div>
+            <div className="text-center lg:text-left">
               <h3 className="text-lg font-bold text-gray-800 mb-4 relative">
                 Company
-                <div className="absolute bottom-0 left-0 w-8 h-0.5 bg-yellow-400"></div>
+                <div className="absolute bottom-0 left-1/2 lg:left-0 transform lg:transform-none -translate-x-1/2 lg:translate-x-0 w-8 h-0.5 bg-yellow-400"></div>
               </h3>
               <ul className="space-y-3">
                 <li>
@@ -59,10 +59,10 @@ export default function Footer() {
             </div>
 
             {/* First Service Column */}
-            <div>
+            <div className="text-center lg:text-left">
               <h3 className="text-lg font-bold text-gray-800 mb-4 relative">
                 Service
-                <div className="absolute bottom-0 left-0 w-8 h-0.5 bg-yellow-400"></div>
+                <div className="absolute bottom-0 left-1/2 lg:left-0 transform lg:transform-none -translate-x-1/2 lg:translate-x-0 w-8 h-0.5 bg-yellow-400"></div>
               </h3>
               <ul className="space-y-3">
                 <li>
@@ -84,10 +84,10 @@ export default function Footer() {
             </div>
 
             {/* Second Service Column */}
-            <div>
+            <div className="text-center lg:text-left">
               <h3 className="text-lg font-bold text-gray-800 mb-4 relative">
                 Service
-                <div className="absolute bottom-0 left-0 w-8 h-0.5 bg-yellow-400"></div>
+                <div className="absolute bottom-0 left-1/2 lg:left-0 transform lg:transform-none -translate-x-1/2 lg:translate-x-0 w-8 h-0.5 bg-yellow-400"></div>
               </h3>
               <ul className="space-y-3">
                 <li>
