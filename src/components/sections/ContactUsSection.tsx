@@ -10,8 +10,6 @@ export default function ContactUsSection() {
                 }}></div>
             </div>
             <div className="bg-white p-4 rounded-2xl max-w-6xl mx-auto px-4 relative z-10">
-
-
                 <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[250px]">
                     {/* Left Side - Contact Information */}
                     <div className="bg-[#262829] rounded-2xl  p-4 md:p-6 flex flex-col justify-center">
@@ -189,9 +187,6 @@ export default function ContactUsSection() {
                         </div>
                     </div>
                 </div>
-
-
-
             </div>
         </section>
     );

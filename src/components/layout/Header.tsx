@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { Button } from "@/components/layout/Button";
 import { images } from "@/utils/images";
 
@@ -23,27 +24,27 @@ const Header = () => {
 
         {/* Right Section */}
         <div className="flex items-center gap-4">
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
-            <a
-              href="/"
-              className="text-black hover:text-primary airline-transition font-medium"
-            >
-              Home
-            </a>
-            <a
-              href="/founders-initiative"
-              className="text-black hover:text-primary airline-transition font-medium"
-            >
-              Founders’ Initiative
-            </a>
-            <a
-              href="/public-information"
-              className="text-black hover:text-primary airline-transition font-medium"
-            >
-              Public Information
-            </a>
-          </nav>
+                            {/* Desktop Navigation */}
+                  <nav className="hidden md:flex items-center gap-8">
+                    <Link
+                      href="/"
+                      className="text-black hover:text-primary airline-transition font-medium"
+                    >
+                      Home
+                    </Link>
+                    <Link
+                      href="/founders-initiative"
+                      className="text-black hover:text-primary airline-transition font-medium"
+                    >
+                      Founders&apos; Initiative
+                    </Link>
+                    <Link
+                      href="/public-information"
+                      className="text-black hover:text-primary airline-transition font-medium"
+                    >
+                      Public Information
+                    </Link>
+                  </nav>
 
           {/* Contact Button (Same for Desktop & Mobile) */}
           <Button
@@ -87,29 +88,29 @@ const Header = () => {
               ✕
             </button>
 
-            <nav className="flex flex-col items-start gap-6">
-              <a
-                href="/"
-                className="text-black hover:text-primary font-medium"
-                onClick={() => setMobileOpen(false)}
-              >
-                Home
-              </a>
-              <a
-                href="/founders-initiative"
-                className="text-black hover:text-primary font-medium"
-                onClick={() => setMobileOpen(false)}
-              >
-                Founders’ Initiative
-              </a>
-              <a
-                href="/public-information"
-                className="text-black hover:text-primary font-medium"
-                onClick={() => setMobileOpen(false)}
-              >
-                Public Information
-              </a>
-            </nav>
+                                <nav className="flex flex-col items-start gap-6">
+                      <Link
+                        href="/"
+                        className="text-black hover:text-primary font-medium"
+                        onClick={() => setMobileOpen(false)}
+                      >
+                        Home
+                      </Link>
+                      <Link
+                        href="/founders-initiative"
+                        className="text-black hover:text-primary font-medium"
+                        onClick={() => setMobileOpen(false)}
+                      >
+                        Founders&apos; Initiative
+                      </Link>
+                      <Link
+                        href="/public-information"
+                        className="text-black hover:text-primary font-medium"
+                        onClick={() => setMobileOpen(false)}
+                      >
+                        Public Information
+                      </Link>
+                    </nav>
           </div>
         </div>
       )}
