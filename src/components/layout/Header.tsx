@@ -26,19 +26,19 @@ const Header = () => {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
             <a
-              href="#home"
+              href="/"
               className="text-black hover:text-primary airline-transition font-medium"
             >
               Home
             </a>
             <a
-              href="#founders"
+              href="/founders-initiative"
               className="text-black hover:text-primary airline-transition font-medium"
             >
               Founders’ Initiative
             </a>
             <a
-              href="#public"
+              href="/public-information"
               className="text-black hover:text-primary airline-transition font-medium"
             >
               Public Information
@@ -89,21 +89,21 @@ const Header = () => {
 
             <nav className="flex flex-col items-start gap-6">
               <a
-                href="#home"
+                href="/"
                 className="text-black hover:text-primary font-medium"
                 onClick={() => setMobileOpen(false)}
               >
                 Home
               </a>
               <a
-                href="#founders"
+                href="/founders-initiative"
                 className="text-black hover:text-primary font-medium"
                 onClick={() => setMobileOpen(false)}
               >
                 Founders’ Initiative
               </a>
               <a
-                href="#public"
+                href="/public-information"
                 className="text-black hover:text-primary font-medium"
                 onClick={() => setMobileOpen(false)}
               >

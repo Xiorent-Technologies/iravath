@@ -17,3 +17,25 @@ body {
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
+
+/* Custom utility classes */
+.text-primary {
+  color: #8b5cf6; /* purple-500 */
+}
+
+.airline-transition {
+  transition: all 0.3s ease;
+}
+
+.animate-slideIn {
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
