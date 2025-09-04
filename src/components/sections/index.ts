@@ -6,3 +6,5 @@ export { default as CTASection } from './CTASection';
 export { default as FoundersHeroSection } from './FoundersHeroSection';
 export { default as PublicInfoHeroSection } from './PublicInfoHeroSection';
 export { default as WhatThisMeansSection } from './WhatThisMeansSection';
+export { default as UpcomingUpdatesSection } from './UpcomingUpdatesSection';
+export { default as ContactUsSection } from './ContactUsSection';
