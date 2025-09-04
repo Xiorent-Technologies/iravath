@@ -1,117 +1,131 @@
-import Image from "next/image";
+"use client";
 
-export default function CommitmentSection() {
+import { motion } from 'framer-motion';
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
+
+export default function ServicesSection() {
+  const services = [
+    {
+      id: 1,
+      title: "VIP & VVIP Travel",
+      description: "private jet and luxury cabin experiences",
+      image: "/assets/about/Iravath.png"
+    },
+    {
+      id: 2,
+      title: "Air Ambulance Services",
+      description: "rapid medical transfers, global med-evac network",
+      image: "/assets/about/Iravath.png"
+    },
+    {
+      id: 3,
+      title: "Pet-Friendly Travel",
+      description: "dedicated cabins & cargo solutions for pets",
+      image: "/assets/about/Iravath.png"
+    },
+    {
+      id: 4,
+      title: "Domestic & International Flights",
+      description: "safe, comfortable, affordable",
+      image: "/assets/about/Iravath.png"
+    },
+    {
+      id: 5,
+      title: "General Passenger Flights",
+      description: "all segments from economy to premium",
+      image: "/assets/about/Iravath.png"
+    },
+    {
+      id: 6,
+      title: "Cargo Operations",
+      description: "global trade routes, specialized freighters",
+      image: "/assets/about/Iravath.png"
+    }
+  ];
+
   return (
-    <section className="relative bg-neutral-900 text-white py-16 px-6">
-      {/* Background decorative image (top-right corner) */}
-      <div className="absolute top-0 right-0 w-40 h-40 opacity-40 pointer-events-none">
-        <Image
-          src="/assets/header/public-info/top_right_coner.png" // place inside public/
-          alt="Decoration"
-          fill
-          className="object-contain"
-        />
-      </div>
+    <motion.section 
+      className="py-20 bg-gray-50"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 0.8 }}
+      viewport={{ once: true }}
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Section Header */}
+        <motion.div 
+          className="text-center mb-12"
+          initial={{ y: 30, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          viewport={{ once: true }}
+        >
+          <p className="text-lg font-medium text-gray-600 mb-2">What We Offer</p>
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
+            Discover <span className="text-yellow-600">Iravath Airlines</span> Benefits
+          </h2>
+        </motion.div>
 
-      <div className="relative z-10 max-w-6xl mx-auto">
-        {/* Section Heading */}
-        <p className="text-gray-300 mb-2">Our Commitment:</p>
-        <h2 className="text-3xl md:text-4xl font-bold mb-10">
-          We{" "}
-          <span className="text-yellow-400">Deliver</span>{" "}
-          What We Promise.
-        </h2>
-
-        {/* 4 Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-          {/* Card 1 */}
-          <div className="bg-neutral-800 p-6 rounded-lg shadow-md space-x-4 hover:shadow-xl transition" >
-            <Image
-              src="/assets/header/public-info/con4.1.png"// icon inside public/
-              alt="Safety"
-              width={400}
-              height={200}
-              style={{paddingLeft: '15px'}}
-              
-            />
-            <div>
-              <h3 className="text-lg font-semibold mb-2">
-                Safety Accred aircraft.
-              </h3>
-              <p className="text-gray-400 text-sm">
-                Certified aircraft and world-class crews ensuring private, luxury, 
-                and commercial flights with the highest safety standards.
-              </p>
-            </div>
-          </div>
-
-          {/* Card 2 */}
-          <div className="bg-neutral-800 p-6 rounded-lg shadow-md space-x-4 hover:shadow-xl transition">
-            <Image
-              src="/assets/header/public-info/con4.2.png"
-              alt="Technology"
-              width={400}
-              height={200}
-              style={{paddingLeft: '15px'}}
-              
-              className="flex-shrink-0"
-            />
-            <div>
-              <h3 className="text-lg font-semibold mb-2">
-                Technology as advantage
-              </h3>
-              <p className="text-gray-400 text-sm">
-                From AI-powered concierge to global med-evac networks, 
-                we harness innovation to make every journey seamless.
-              </p>
-            </div>
-          </div>
-
-          {/* Card 3 */}
-          <div className="bg-neutral-800 p-6 rounded-lg shadow-md space-x-4 hover:shadow-xl transition">
-            <Image
-              src="/assets/header/public-info/con4.3.png"
-              alt="Sustainability"
-              width={400}
-              height={200}
-              style={{paddingLeft: '15px'}}
-              
-              className="flex-shrink-0"
-            />
-            <div>
-              <h3 className="text-lg font-semibold mb-2">
-                Sustainability as default
-              </h3>
-              <p className="text-gray-400 text-sm">
-                Hybrid-electric fleets, SAF adoption, and eco-smart operations 
-                to make aviation greener.
-              </p>
-            </div>
-          </div>
-
-          {/* Card 4 */}
-          <div className="bg-neutral-800 p-6 rounded-lg shadow-md space-x-4 hover:shadow-xl transition">
-            <Image
-              src="/assets/header/public-info/con4.4.png"
-              alt="Scale"
-             width={400}
-              height={200}
-              style={{paddingLeft: '15px'}}
-              
-              className="flex-shrink-0"
-            />
-            <div>
-              <h3 className="text-lg font-semibold mb-2">
-                Scale as service
-              </h3>
-              <p className="text-gray-400 text-sm">
-                From economy to premium, from air taxis to cargo—one airline 
-                for every traveller and every need.
-              </p>
-            </div>
-          </div>
+        {/* Mobile View - Swiper */}
+        <div className="block lg:hidden">
+          <Swiper
+            modules={[Pagination]}
+            spaceBetween={16}
+            slidesPerView={1.1}
+            centeredSlides={false}
+            pagination={{ clickable: true }}
+          >
+            {services.map((service) => (
+              <SwiperSlide key={service.id}>
+                <div className="relative group overflow-hidden rounded-2xl shadow-lg">
+                  <div
+                    className="relative h-64 bg-cover bg-center"
+                    style={{ backgroundImage: `url(${service.image})` }}
+                  >
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+                    <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 text-white">
+                      <h3 className="text-lg sm:text-xl font-bold mb-2">
+                        {service.title}
+                      </h3>
+                      <p className="text-gray-200 text-sm leading-relaxed">
+                        {service.description}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
+
+        {/* Desktop View - Grid */}
+        <div className="hidden lg:grid grid-cols-3 gap-6 lg:gap-8 mt-8">
+          {services.map((service) => (
+            <div
+              key={service.id}
+              className="relative group overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
+            >
+              <div
+                className="relative h-72 bg-cover bg-center"
+                style={{ backgroundImage: `url(${service.image})` }}
+              >
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+                <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                  <h3 className="text-xl font-bold mb-2">{service.title}</h3>
+                  <p className="text-gray-200 text-sm leading-relaxed">
+                    {service.description}
+                  </p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
       </div>
-    </section>
+    </motion.section>
   );
 }

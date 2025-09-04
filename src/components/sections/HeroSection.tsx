@@ -1,5 +1,7 @@
 "use client";
 
+import { motion } from 'framer-motion';
+
 export default function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center bg-black overflow-hidden">
@@ -39,41 +41,88 @@ export default function HeroSection() {
       `}</style>
       
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col-reverse md:flex-row items-center">
-        <div className="w-full md:w-1/2 mb-12 md:mb-0">
+        <motion.div 
+          className="w-full md:w-1/2 mb-12 md:mb-0"
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
           {/* Main Heading */}
-          <h1 className="text-5xl md:text-6xl font-bold text-[#D4A761] mb-4">
+          <motion.h1 
+            className="text-5xl md:text-6xl font-bold text-[#D4A761] mb-4"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
             IRAVATH AIRLINES
-          </h1>
+          </motion.h1>
           
           {/* Subtitle */}
-          <h2 className="text-[32px] md:text-[64px] text-[#262829] mb-6">
+          <motion.h2 
+            className="text-[32px] md:text-[64px] text-[#262829] mb-6"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+          >
             Boundless<br/>Journeys for Every <br/>Traveller
-          </h2>
+          </motion.h2>
           
           {/* Description */}
-          <p className="text-lg text-[#757681] mb-8 max-w-xl">
+          <motion.p 
+            className="text-lg text-[#757681] mb-8 max-w-xl"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+          >
             Iravath Airlines is totally committed to supporting our clients by providing safe and reliable solutions for their air charter needs.
-          </p>
+          </motion.p>
           
           {/* CTA Buttons */}
-          <div className="flex flex-wrap gap-4">
-            <button className="px-8 py-3 bg-transparent text-black font-medium rounded-full border-2 border-black  transition-all duration-300">
+          <motion.div 
+            className="flex flex-wrap gap-4"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.0 }}
+          >
+            <motion.button 
+              className="px-8 py-3 bg-transparent text-black font-medium rounded-full border-2 border-black transition-all duration-300 hover:bg-black hover:text-white"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
               Explore Founders&apos; Initiative
-            </button>
-          </div>
-        </div>
+            </motion.button>
+          </motion.div>
+        </motion.div>
         
-        <div className="w-full md:w-1/2 flex justify-center md:justify-end mb-8 md:mb-0">
-          <div className="relative w-full max-w-lg">
-            {/* <div className="rounded-lg overflow-hidden shadow-2xl"> */}
-              <img 
-                src="/assets/hero/Aeroplane.png" 
-                alt="Iravath Airlines Aircraft" 
-                className="w-full h-auto scale-150" 
-              />
-            {/* </div> */}
-          </div>
-        </div>
+        <motion.div 
+          className="w-full md:w-1/2 flex justify-center md:justify-end mb-8 md:mb-0"
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+        >
+          <motion.div 
+            className="relative w-full max-w-lg"
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 1.0, delay: 0.5 }}
+            whileHover={{ scale: 1.05 }}
+          >
+            <motion.img 
+              src="/assets/hero/Aeroplane.png" 
+              alt="Iravath Airlines Aircraft" 
+              className="w-full h-auto scale-150" 
+              initial={{ y: 20 }}
+              animate={{ y: 0 }}
+              transition={{ 
+                duration: 1.2, 
+                delay: 0.7,
+                repeat: Infinity,
+                repeatType: "reverse",
+                repeatDelay: 3
+              }}
+            />
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );
