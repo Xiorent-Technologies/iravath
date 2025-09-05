@@ -2,7 +2,7 @@ export default function PublicInfoHeroSection() {
   return (
     <section className="relative overflow-hidden">
       {/* Hero Section with Airplane Cabin Background */}
-      <div className="relative h-[60vh] md:h-screen flex items-center justify-center">
+      <div className="relative h-[70vh] sm:h-[80vh] md:h-screen flex items-center justify-center">
         {/* Background Image */}
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
