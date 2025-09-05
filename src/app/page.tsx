@@ -34,7 +34,7 @@ export default function Home() {
           <FeaturesSection2/>
           <TestimonialsSection />
           <CTASection />
-          <Testimonials/>
+          {/* <Testimonials/> */}
         </main>
         <Footer />
       </div>

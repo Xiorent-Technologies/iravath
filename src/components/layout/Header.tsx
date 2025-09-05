@@ -49,12 +49,12 @@ const Header = () => {
           </nav>
 
           {/* Contact Button */}
-          <Button
+          {/* <Button
             variant="gold"
             className="px-4 py-2 rounded-full text-sm flex items-center"
           >
             <span className="mr-1">📞</span> Contact Us
-          </Button>
+          </Button> */}
 
           {/* Mobile Menu Button */}
           <Button
