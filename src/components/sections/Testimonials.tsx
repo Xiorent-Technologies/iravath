@@ -18,7 +18,7 @@ const testimonials = [
     id: 2,
     name: "Stephen Brekke",
     role: "Legacy Integration Producer",
-    text: "If you want real marketing that works and I travel often, this platform always offers the best prices on premium airlines. Easy to find flights with the amenities I need. Great for business travelers! If you want real marketing that works and I travel often, this platform always offers the best prices on premium airlines. Easy to find flights with the amenities I need. Great for business travelers!",
+    text: "If you want real marketing that works and I travel often, this platform always offers the best prices on premium airlines. Easy to find flights with the amenities I need. Great for business travelers!",
     title: "Best Deals & User-Friendly",
     image: "/assets/testimonials/Testi1.png",
   },
@@ -44,49 +44,50 @@ export default function Testimonials() {
           </h2>
         </div>
 
-        {/* Swiper for Mobile, Grid for Desktop */}
+        {/* Grid for Desktop */}
         <div className="hidden lg:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {testimonials.map((t) => (
-            <div
-              key={t.id}
-              className={`bg-[#1E1E1E] text-white rounded-2xl shadow-lg p-6 relative
-      ${t.id === 2 ? "lg:row-span-2" : ""}`}
-            >
+            <div key={t.id} className="relative">
               {/* Profile Image */}
-<div className="absolute -top-6 sm:-top-8 left-6">
+              <div className="absolute -top-10 left-6 z-20">
                 <img
                   src={t.image}
                   alt={t.name}
-    className="w-16 h-16 rounded-full border-4 border-white shadow-md"
+                  className="w-20 h-20 rounded-full border-4 border-white shadow-md object-cover"
                 />
               </div>
 
-              {/* Stars */}
-              <div className="flex justify-end mb-2">
-                {"★★★★★".split("").map((star, i) => (
-                  <span key={i} className="text-yellow-500 text-lg">
-                    ★
-                  </span>
-                ))}
-              </div>
+              {/* Card */}
+              <div
+                className={`bg-[#1E1E1E] text-white rounded-2xl shadow-lg p-6 pt-12 relative z-10`}
+              >
+                {/* Stars */}
+                <div className="flex justify-end mb-2">
+                  {"★★★★★".split("").map((star, i) => (
+                    <span key={i} className="text-yellow-500 text-lg">
+                      ★
+                    </span>
+                  ))}
+                </div>
 
-              {/* Title */}
-              <h3 className="font-semibold text-lg mb-2 mt-6">{t.title}</h3>
-              <p className="text-gray-300 text-sm leading-relaxed">{t.text}</p>
+                {/* Title */}
+                <h3 className="font-semibold text-lg mb-2 mt-6">{t.title}</h3>
+                <p className="text-gray-300 text-sm leading-relaxed">{t.text}</p>
 
-              {/* Footer */}
-              <div className="mt-6">
-                <p className="font-semibold">{t.name}</p>
-                <p className="text-gray-400 text-sm">{t.role}</p>
-                <p className="text-yellow-500 text-xs mt-1 flex items-center gap-1">
-                  <span>●</span> Testimonial
-                </p>
+                {/* Footer */}
+                <div className="mt-6">
+                  <p className="font-semibold">{t.name}</p>
+                  <p className="text-gray-400 text-sm">{t.role}</p>
+                  <p className="text-yellow-500 text-xs mt-1 flex items-center gap-1">
+                    <span>●</span> Testimonial
+                  </p>
+                </div>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Mobile Swiper */}
+        {/* Swiper for Mobile */}
         <div className="lg:hidden">
           <Swiper
             modules={[Pagination]}
@@ -96,40 +97,46 @@ export default function Testimonials() {
           >
             {testimonials.map((t) => (
               <SwiperSlide key={t.id}>
-  <div className="bg-[#1E1E1E] text-white rounded-2xl shadow-lg p-6 pt-12 relative">
-    {/* Profile Image */}
-    <div className="absolute -top-8 left-6">
-      <img
-        src={t.image}
-        alt={t.name}
-        className="w-16 h-16 rounded-full border-4 border-white shadow-md"
-      />
-    </div>
+                <div className="relative">
+                  {/* Profile Image */}
+                  <div className="absolute -top-10 left-6 z-20">
+                    <img
+                      src={t.image}
+                      alt={t.name}
+                      className="w-20 h-20 rounded-full border-4 border-white shadow-md object-cover"
+                    />
+                  </div>
 
-    {/* Stars */}
-    <div className="flex justify-end mb-2">
-      {"★★★★★".split("").map((star, i) => (
-        <span key={i} className="text-yellow-500 text-lg">
-          ★
-        </span>
-      ))}
-    </div>
+                  {/* Card */}
+                  <div className="bg-[#1E1E1E] text-white rounded-2xl shadow-lg p-6 pt-12 relative z-10">
+                    {/* Stars */}
+                    <div className="flex justify-end mb-2">
+                      {"★★★★★".split("").map((star, i) => (
+                        <span key={i} className="text-yellow-500 text-lg">
+                          ★
+                        </span>
+                      ))}
+                    </div>
 
-    {/* Title */}
-    <h3 className="font-semibold text-lg mb-2 mt-6">{t.title}</h3>
-    <p className="text-gray-300 text-sm leading-relaxed">{t.text}</p>
+                    {/* Title */}
+                    <h3 className="font-semibold text-lg mb-2 mt-6">
+                      {t.title}
+                    </h3>
+                    <p className="text-gray-300 text-sm leading-relaxed">
+                      {t.text}
+                    </p>
 
-    {/* Footer */}
-    <div className="mt-6">
-      <p className="font-semibold">{t.name}</p>
-      <p className="text-gray-400 text-sm">{t.role}</p>
-      <p className="text-yellow-500 text-xs mt-1 flex items-center gap-1">
-        <span>●</span> Testimonial
-      </p>
-    </div>
-  </div>
-</SwiperSlide>
-
+                    {/* Footer */}
+                    <div className="mt-6">
+                      <p className="font-semibold">{t.name}</p>
+                      <p className="text-gray-400 text-sm">{t.role}</p>
+                      <p className="text-yellow-500 text-xs mt-1 flex items-center gap-1">
+                        <span>●</span> Testimonial
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </SwiperSlide>
             ))}
           </Swiper>
         </div>

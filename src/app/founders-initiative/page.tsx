@@ -2,7 +2,7 @@ import FoundersHeroSection from '@/components/sections/FoundersHeroSection';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import FeaturesSection from '@/components/sections/FeaturesSection';
-import TestimonialsSection from '@/components/sections/TestimonialsSection';
+import CommimentSection from '@/components/sections/CommitmentSection';
 
 export default function FoundersInitiativePage() {
   return (
@@ -11,7 +11,7 @@ export default function FoundersInitiativePage() {
       <main>
         <FoundersHeroSection />
         <FeaturesSection />
-        <TestimonialsSection />
+        <CommimentSection />
 
       </main>
       <Footer />
