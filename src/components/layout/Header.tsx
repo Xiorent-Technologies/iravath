@@ -13,40 +13,42 @@ const Header = () => {
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         {/* Logo (Left Side) */}
         <div className="flex items-center gap-3">
-          <img
-            width={48}
-            height={48}
-            className="sm:w-[70px] sm:h-[70px] lg:w-[70px] lg:h-[70px]"
-            src={images.logo}
-            alt="Airline Logo"
-          />
+          <Link href="/" aria-label="Go to homepage">
+            <img
+              width={48}
+              height={48}
+              className="cursor-pointer sm:w-[70px] sm:h-[70px] lg:w-[70px] lg:h-[70px]"
+              src={images.logo}
+              alt="Airline Logo"
+            />
+          </Link>
         </div>
 
         {/* Right Section */}
         <div className="flex items-center gap-4">
-                            {/* Desktop Navigation */}
-                  <nav className="hidden md:flex items-center gap-8">
-                    <Link
-                      href="/"
-                      className="text-black hover:text-primary airline-transition font-medium"
-                    >
-                      Home
-                    </Link>
-                    <Link
-                      href="/founders-initiative"
-                      className="text-black hover:text-primary airline-transition font-medium"
-                    >
-                      Founders&apos; Initiative
-                    </Link>
-                    <Link
-                      href="/public-information"
-                      className="text-black hover:text-primary airline-transition font-medium"
-                    >
-                      Public Information
-                    </Link>
-                  </nav>
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex items-center gap-8">
+            <Link
+              href="/"
+              className="text-black hover:text-primary airline-transition font-medium"
+            >
+              Home
+            </Link>
+            <Link
+              href="/founders-initiative"
+              className="text-black hover:text-primary airline-transition font-medium"
+            >
+              Founders&apos; Initiative
+            </Link>
+            <Link
+              href="/public-information"
+              className="text-black hover:text-primary airline-transition font-medium"
+            >
+              Public Information
+            </Link>
+          </nav>
 
-          {/* Contact Button (Same for Desktop & Mobile) */}
+          {/* Contact Button */}
           <Button
             variant="gold"
             className="px-4 py-2 rounded-full text-sm flex items-center"
@@ -88,29 +90,29 @@ const Header = () => {
               ✕
             </button>
 
-                                <nav className="flex flex-col items-start gap-6">
-                      <Link
-                        href="/"
-                        className="text-black hover:text-primary font-medium"
-                        onClick={() => setMobileOpen(false)}
-                      >
-                        Home
-                      </Link>
-                      <Link
-                        href="/founders-initiative"
-                        className="text-black hover:text-primary font-medium"
-                        onClick={() => setMobileOpen(false)}
-                      >
-                        Founders&apos; Initiative
-                      </Link>
-                      <Link
-                        href="/public-information"
-                        className="text-black hover:text-primary font-medium"
-                        onClick={() => setMobileOpen(false)}
-                      >
-                        Public Information
-                      </Link>
-                    </nav>
+            <nav className="flex flex-col items-start gap-6">
+              <Link
+                href="/"
+                className="text-black hover:text-primary font-medium"
+                onClick={() => setMobileOpen(false)}
+              >
+                Home
+              </Link>
+              <Link
+                href="/founders-initiative"
+                className="text-black hover:text-primary font-medium"
+                onClick={() => setMobileOpen(false)}
+              >
+                Founders&apos; Initiative
+              </Link>
+              <Link
+                href="/public-information"
+                className="text-black hover:text-primary font-medium"
+                onClick={() => setMobileOpen(false)}
+              >
+                Public Information
+              </Link>
+            </nav>
           </div>
         </div>
       )}

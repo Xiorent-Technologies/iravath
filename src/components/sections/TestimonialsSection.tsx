@@ -12,37 +12,37 @@ export default function ServicesSection() {
       id: 1,
       title: "VIP & VVIP Travel",
       description: "private jet and luxury cabin experiences",
-      image: "/assets/about/Iravath.png"
+      image: "/assets/about/card1.png"
     },
     {
       id: 2,
       title: "Air Ambulance Services",
       description: "rapid medical transfers, global med-evac network",
-      image: "/assets/about/Iravath.png"
+      image: "/assets/about/card2.png"
     },
     {
       id: 3,
       title: "Pet-Friendly Travel",
       description: "dedicated cabins & cargo solutions for pets",
-      image: "/assets/about/Iravath.png"
+      image: "/assets/about/card3.png"
     },
     {
       id: 4,
       title: "Domestic & International Flights",
       description: "safe, comfortable, affordable",
-      image: "/assets/about/Iravath.png"
+      image: "/assets/about/card4.png"
     },
     {
       id: 5,
       title: "General Passenger Flights",
       description: "all segments from economy to premium",
-      image: "/assets/about/Iravath.png"
+      image: "/assets/about/card5.png"
     },
     {
       id: 6,
       title: "Cargo Operations",
       description: "global trade routes, specialized freighters",
-      image: "/assets/about/Iravath.png"
+      image: "/assets/about/card6.png"
     }
   ];
 
