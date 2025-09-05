@@ -33,7 +33,7 @@ export default function CTASection() {
       <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2">
         {/* LEFT CONTENT */}
         <motion.div
-          className="flex flex-col justify-center px-6 sm:px-10 lg:px-16 py-16 lg:py-28"
+          className="flex flex-col justify-center px-4 sm:px-6 lg:px-16 py-12 sm:py-16 lg:py-28"
           initial={{ x: -40, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.7 }}
@@ -66,33 +66,32 @@ export default function CTASection() {
 
           {/* CTA BOX */}
           <motion.div
-            className="bg-[#FDF1E1] text-black rounded-xl shadow-lg px-5 py-5 w-full sm:w-auto max-w-full sm:max-w-md flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4"
+            className="bg-[#FDF1E1] text-black rounded-xl shadow-lg px-4 py-4 sm:px-5 sm:py-5 w-full max-w-full sm:max-w-lg"
             initial={{ y: 24, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.35 }}
           >
-            {/* Left side: Subscribe button + Number below */}
-            <div className="flex-1 min-w-0 flex flex-col items-start">
+            {/* Subscribe section with input field and button */}
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full">
+              <motion.input
+                type="email"
+                placeholder="Enter your email"
+                className="flex-1 px-4 py-3 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent text-sm w-full"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+              />
               <motion.button
-                className="bg-black text-white hover:bg-gray-800 font-semibold py-2 px-4 rounded-full text-sm transition"
+                className="bg-yellow-500 hover:bg-yellow-600 text-black font-semibold py-3 px-6 rounded-full flex items-center justify-center transition w-full sm:w-auto"
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.96 }}
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 0.5 }}
               >
-                Subscribe
+                <span className="mr-2">✈</span> Subscribe
               </motion.button>
-              <p className="text-xl sm:text-2xl font-bold leading-tight mt-2">
-                9-999-99-99
-              </p>
             </div>
-
-            {/* Right side: Book Now button */}
-            <motion.button
-              className="bg-yellow-500 hover:bg-yellow-600 text-black font-semibold py-3 px-6 rounded-full w-full sm:w-auto flex items-center justify-center transition"
-              whileHover={{ scale: 1.04 }}
-              whileTap={{ scale: 0.96 }}
-            >
-              <span className="mr-2">✈</span> Book Now
-            </motion.button>
           </motion.div>
         </motion.div>
 
